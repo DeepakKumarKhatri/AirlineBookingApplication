@@ -1,0 +1,31 @@
+<header class="header">
+  <div class="header-container">
+    <h1>Airline Booking System</h1>
+    <nav>
+      <div class="myA" routerLink="/dashboard">Dashboard</div>
+      <div class="myA" routerLink="/login">Logout</div>
+    </nav>
+  </div>
+</header>
+
+<div class="admin-table-container">
+  <h2 class="head">Admins</h2>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admin of admins">
+        <td>{{ admin.id }}</td>
+        <td>{{ admin.fullName }}</td>
+        <td>{{ admin.email }}</td>
+        <td>{{ admin.password }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

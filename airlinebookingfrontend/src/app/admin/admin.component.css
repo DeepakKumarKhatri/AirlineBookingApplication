@@ -1,0 +1,84 @@
+.header {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 10px 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.head{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav {
+  display: flex;
+}
+
+.myA {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e74c3c;
+}
+
+.admin-table-container {
+  margin-top: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #f2f2f2;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.admin-table tbody td {
+  border-top: 1px solid #dddddd;
+}
+
+.admin-table tbody td:first-child,
+.admin-table thead th:first-child {
+  border-left: 1px solid #dddddd;
+}
+
+.admin-table tbody td:last-child,
+.admin-table thead th:last-child {
+  border-right: 1px solid #dddddd;
+}
