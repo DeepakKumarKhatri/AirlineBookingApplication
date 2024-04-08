@@ -23,12 +23,12 @@ public class PilotsController {
         return pilotsService.getPilotById(id);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Pilots> getAllPilots() {
         return pilotsService.getAllPilots();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Pilots createPilot(@RequestBody Pilots pilot) {
         return pilotsService.createPilot(pilot);
     }

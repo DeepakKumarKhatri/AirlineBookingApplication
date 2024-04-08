@@ -23,12 +23,12 @@ public class PassengerController {
         return passengerService.getPassengerById(id);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Passenger> getAllPassengers() {
         return passengerService.getAllPassengers();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Passenger createPassenger(@RequestBody Passenger passenger) {
         return passengerService.createPassenger(passenger);
     }
