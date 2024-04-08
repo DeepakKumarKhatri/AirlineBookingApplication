@@ -21,7 +21,10 @@ public class Flight implements Serializable {
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
     private Set<Booking> bookings;
 
-    public Flight(Long id, String flightNumber, String departureAirport, String arrivalAirport, String departureTime, String arrivalTime, Set<Booking> bookings) {
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    private Set<Pilots> pilots;
+
+    public Flight(Long id, String flightNumber, String departureAirport, String arrivalAirport, String departureTime, String arrivalTime, Set<Booking> bookings, Set<Pilots> pilots) {
         this.id = id;
         this.flightNumber = flightNumber;
         this.departureAirport = departureAirport;
@@ -29,9 +32,11 @@ public class Flight implements Serializable {
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
         this.bookings = bookings;
+        this.pilots = pilots;
     }
 
-    public Flight() {}
+    public Flight() {
+    }
 
     public Long getId() {
         return id;
@@ -89,6 +94,14 @@ public class Flight implements Serializable {
         this.bookings = bookings;
     }
 
+    public Set<Pilots> getPilots() {
+        return pilots;
+    }
+
+    public void setPilots(Set<Pilots> pilots) {
+        this.pilots = pilots;
+    }
+
     @Override
     public String toString() {
         return "Flight{" +
@@ -99,6 +112,7 @@ public class Flight implements Serializable {
                 ", departureTime='" + departureTime + '\'' +
                 ", arrivalTime='" + arrivalTime + '\'' +
                 ", bookings=" + bookings +
+                ", pilots=" + pilots +
                 '}';
     }
 }

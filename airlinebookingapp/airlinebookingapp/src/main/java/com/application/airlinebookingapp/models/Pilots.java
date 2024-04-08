@@ -17,12 +17,17 @@ public class Pilots implements Serializable {
     private String email;
     private String phone;
 
-    public Pilots(Long id, String firstName, String lastName, String email, String phone) {
+    @ManyToOne
+    @JoinColumn(name = "flight_id")
+    private Flight flight;
+
+    public Pilots(Long id, String firstName, String lastName, String email, String phone, Flight flight) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
+        this.flight = flight;
     }
 
     public Pilots() {
@@ -68,6 +73,14 @@ public class Pilots implements Serializable {
         this.phone = phone;
     }
 
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
     @Override
     public String toString() {
         return "Pilots{" +
@@ -76,6 +89,7 @@ public class Pilots implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", flight=" + flight +
                 '}';
     }
 }
