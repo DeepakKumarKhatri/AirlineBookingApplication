@@ -1,0 +1,85 @@
+<header class="header">
+  <div class="header-container">
+    <h1>Airline Booking System</h1>
+    <nav>
+      <div class="myA" routerLink="/dashboard">Dashboard</div>
+      <div class="myA" routerLink="/login">Logout</div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="airport-table-container">
+    <div class="contai">
+      <h2 class="table-heading">Airports</h2>
+      <button class="add-btn" (click)="showAddAirportForm()">Add Airport</button>
+    </div>
+    <table class="airport-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let airport of airports">
+          <td>{{ airport.code }}</td>
+          <td>{{ airport.name }}</td>
+          <td>{{ airport.country }}</td>
+          <td>
+            <button class="edit-btn" (click)="editAirport(airport)">
+              Edit
+            </button>
+            <button class="delete-btn" (click)="deleteAirport(airport.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<div *ngIf="showAddForm" class="add-airport-form-container">
+  <h2>Add Airport</h2>
+  <form (submit)="addAirport()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" [(ngModel)]="newAirport.name" required>
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" id="country" name="country" [(ngModel)]="newAirport.country" required>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" [(ngModel)]="newAirport.city" required>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="showEditForm && selectedAirport" class="edit-airport-form-container">
+  <h2>Edit Airport</h2>
+  <form (submit)="updateAirport()">
+    <div class="form-group">
+      <label for="edit-name">Name</label>
+      <input type="text" id="edit-name" name="edit-name" [(ngModel)]="selectedAirport.name" required>
+    </div>
+    <div class="form-group">
+      <label for="edit-country">Country</label>
+      <input type="text" id="edit-country" name="edit-country" [(ngModel)]="selectedAirport.country" required>
+    </div>
+    <div class="form-group">
+      <label for="edit-city">City</label>
+      <input type="text" id="edit-city" name="edit-city" [(ngModel)]="selectedAirport.city" required>
+    </div>
+    <button type="submit">Update</button>
+  </form>
+</div>
+
+
+
+

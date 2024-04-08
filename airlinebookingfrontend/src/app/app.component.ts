@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AirportComponent } from './airport/airport.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RouterModule,
     AdminComponent,
     DashboardComponent,
+    AirportComponent,
+    FormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

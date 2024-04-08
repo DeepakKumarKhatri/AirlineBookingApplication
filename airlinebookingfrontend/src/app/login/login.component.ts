@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { SignupComponent } from '../signup/signup.component';
+import { AdminComponent } from '../admin/admin.component';
+import { HomePageComponent } from '../home-page/home-page.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [
+    DashboardComponent,
+    LoginComponent,
+    SignupComponent,
+    AdminComponent,
+    HomePageComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
