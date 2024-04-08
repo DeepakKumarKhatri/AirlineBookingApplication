@@ -1,8 +1,6 @@
 package com.application.airlinebookingapp.models;
 
 import java.io.Serializable;
-import java.util.Set;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -16,15 +14,11 @@ public class Passenger implements Serializable {
     private String lastName;
     private String email;
 
-    @OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL)
-    private Set<Booking> bookings;
-
-    public Passenger(Long id, String firstName, String lastName, String email, Set<Booking> bookings) {
+    public Passenger(Long id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.bookings = bookings;
     }
 
     public Passenger() {
@@ -62,14 +56,6 @@ public class Passenger implements Serializable {
         this.email = email;
     }
 
-    public Set<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(Set<Booking> bookings) {
-        this.bookings = bookings;
-    }
-
     @Override
     public String toString() {
         return "Passenger{" +
@@ -77,7 +63,6 @@ public class Passenger implements Serializable {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", bookings=" + bookings +
                 '}';
     }
 }

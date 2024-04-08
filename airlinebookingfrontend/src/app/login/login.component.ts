@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { SignupComponent } from '../signup/signup.component';
 import { AdminComponent } from '../admin/admin.component';
 import { HomePageComponent } from '../home-page/home-page.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,8 @@ import { HomePageComponent } from '../home-page/home-page.component';
     SignupComponent,
     AdminComponent,
     HomePageComponent,
+    RouterModule,
+    CommonModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',

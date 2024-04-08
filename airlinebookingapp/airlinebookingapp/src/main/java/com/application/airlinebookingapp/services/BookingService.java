@@ -1,7 +1,6 @@
 package com.application.airlinebookingapp.services;
 
 import com.application.airlinebookingapp.custom_exceptions.BookingNotFoundException;
-import com.application.airlinebookingapp.models.Aircraft;
 import com.application.airlinebookingapp.models.Booking;
 import com.application.airlinebookingapp.repo.BookingRepo;
 import jakarta.transaction.Transactional;

@@ -1,5 +1,5 @@
 header {
-  background-color: #007bff;
+  background-color: #2c3e50;
   color: #fff;
   padding: 20px 0;
 }
@@ -55,7 +55,7 @@ input[type="password"] {
 }
 
 button {
-  background-color: #007bff;
+  background-color: #2c3e50;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -70,4 +70,14 @@ button:hover {
 
 button:active {
   background-color: #00408a;
+}
+
+.signup-link {
+  color: blue; /* Change color to indicate link */
+  text-decoration: underline; /* Underline to indicate it's clickable */
+  cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+}
+
+.signup-link:hover {
+  color: darkblue; /* Change color on hover for visual feedback */
 }

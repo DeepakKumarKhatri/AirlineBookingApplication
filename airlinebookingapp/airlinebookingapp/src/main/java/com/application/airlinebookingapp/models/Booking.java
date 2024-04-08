@@ -1,12 +1,15 @@
 package com.application.airlinebookingapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 import jakarta.persistence.Entity;
-
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Booking implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +18,7 @@ public class Booking implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "flight_id", nullable = false)
-    private Flight flight; // Rename the attribute to avoid naming conflict
+    private Flight flight;
 
     @ManyToOne
     @JoinColumn(name = "passenger_id", nullable = false)
