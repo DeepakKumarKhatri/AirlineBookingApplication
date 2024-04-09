@@ -1,0 +1,87 @@
+<header class="header">
+  <div class="header-container">
+    <h1>Airline Booking System</h1>
+    <nav>
+      <div class="myA" routerLink="/dashboard">Dashboard</div>
+      <div class="myA" routerLink="/login">Logout</div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="pilot-table-container">
+    <div class="contai">
+      <h2 class="table-heading">Pilots</h2>
+      <button class="add-btn" (click)="showAddPilotForm()">Add Pilot</button>
+    </div>
+    <table class="pilot-table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pilot of pilots">
+          <td>{{ pilot.firstName }}</td>
+          <td>{{ pilot.lastName }}</td>
+          <td>{{ pilot.email }}</td>
+          <td>{{ pilot.phone }}</td>
+          <td>
+            <button class="edit-btn" (click)="editPilot(pilot)">Edit</button>
+            <button class="delete-btn" (click)="deletePilot(pilot.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<div *ngIf="showAddForm" class="add-pilot-form-container">
+  <h2>Add Pilot</h2>
+  <form (submit)="addPilot()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="newPilot.firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="newPilot.lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="newPilot.email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" [(ngModel)]="newPilot.phone" required>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="showEditForm && selectedPilot" class="edit-pilot-form-container">
+  <h2>Edit Pilot</h2>
+  <form (submit)="updatePilot()">
+    <div class="form-group">
+      <label for="editFirstName">First Name</label>
+      <input type="text" id="editFirstName" name="editFirstName" [(ngModel)]="selectedPilot.firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="editLastName">Last Name</label>
+      <input type="text" id="editLastName" name="editLastName" [(ngModel)]="selectedPilot.lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="editEmail">Email</label>
+      <input type="email" id="editEmail" name="editEmail" [(ngModel)]="selectedPilot.email" required>
+    </div>
+    <div class="form-group">
+      <label for="editPhone">Phone</label>
+      <input type="text" id="editPhone" name="editPhone" [(ngModel)]="selectedPilot.phone" required>
+    </div>
+    <button type="submit">Update</button>
+  </form>
+</div>
